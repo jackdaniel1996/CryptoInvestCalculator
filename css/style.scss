@@ -1,0 +1,232 @@
+@import 'variables';
+
+body{
+    margin: 0;
+    transition: all $transitionStandard;
+
+    &.darkmode{
+        background-color: $darkodeColor;
+        transition: all $transitionStandard;
+
+        .navigation-wrapper{
+            background-color: $darkodeColor;
+            transition: all $transitionStandard;
+        }
+
+        .navigation-item,
+        .site-logo,
+        .site-slogan{
+            color: white;
+            transition: color $transitionStandard;
+        }
+
+        .darkmode-button{
+            &.set-dark{
+                display: none;
+            }
+
+            &.set-light{
+                display: block;
+            }
+        }
+    }
+}
+
+.navigation-wrapper{    
+    height: 100%;
+    padding: 25px;
+    position: fixed;
+    width: 300px;
+    box-sizing: border-box;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: $fontColor;
+    transition: all $transitionStandard;
+}
+
+.site-logo {
+    display: inline-block;
+    color: $fontColor;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    > span:first-child{
+        font-size: 30pt;
+        /*font-family: 'Source Serif Pro', serif;
+        font-family: 'Quicksand', sans-serif;*/
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 25pt;
+        background: $mainGradientSimple;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.fixed.site-logo {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 1001;
+}
+
+.navigation-item-wrapper{
+    display: flex;
+    flex-direction: column;    
+    margin-top: 10px;
+}
+
+.navigation-item{
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    color: $fontColor;
+    display: inline-block;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: color $transitionStandard;
+    border-top: 1px solid #dddddd;
+    width: 110px;
+
+    &:first-child{
+        border-top: none;
+    }
+
+    &:last-child{
+        border-bottom: 1px solid #dddddd;;
+    }
+
+    &:hover{
+        color: #0B52B0; 
+        transition: color $transitionStandard;
+    }
+}
+
+.site-slogan{    
+    font-size: 7pt;
+    line-height: 11px;
+    font-family: $fontText;
+    font-weight: 700;
+    display: inline-block;
+    color: $fontColor;
+    transition: color $transitionStandard;
+}
+
+.landing-page-wrapper{
+    position: relative;
+    width: calc(100% - 325px);
+    background-color: #388eff;
+    background: $mainGradient;
+    overflow: hidden;
+    margin-left: 300px;
+    margin-top: 25px;
+    border-radius: 3px;
+}
+
+.landing-page-left-side{
+    width: 50%;
+    height: 100%;
+    /*background-color: #f0f8ff;*/    
+    display: flex;
+    float: left;
+    align-items: flex-end;
+    padding: 15px 15px;
+    box-sizing: border-box;
+}
+
+.landing-page-right-side{
+    width: 50%;
+    height: 100%;
+    float: right;
+    position: relative;
+ }
+
+.landing-page-image{
+    background-image: url('../imgs/4-format2020.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landingpage-banner-wrapper{
+    height: 60vh;
+    width: 100%;
+}
+
+.title-font{
+    color: #2b2b2b;
+    //font-size: 70pt;
+    font-size: 5.5vw;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+.landing-page-wrapper .title-font{
+    color: white;
+}
+
+img.background-3-b {
+    position: absolute;
+    z-index: 0;
+    height: 80vh;
+    left: -135px;
+    bottom: -150px;
+    opacity: 0.7;
+}
+
+.darkmode-button-wrapper{
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    height: 20px;
+    width: 20px;
+
+    .darkmode-button{
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        background-size: cover;
+        position: absolute;
+
+        &.set-dark{
+            background-image: url('../imgs/moon.png');
+        }
+
+        &.set-light{
+            background-image: url('../imgs/sun.png');
+            filter: invert(1);
+            display: none;
+        }
+    }
+}
+
+a:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// mobile: 
+@media (max-width:768px){
+    .navigation-wrapper{
+        width: 200px;
+        left: -200px;
+    }
+    .landing-page-wrapper{
+        width: calc(100% - 50px);
+        margin-left: 25px;
+    }
+}

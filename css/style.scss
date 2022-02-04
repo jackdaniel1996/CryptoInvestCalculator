@@ -222,8 +222,10 @@ a:-webkit-any-link{
 
 // mobile: 
 @media (max-width:768px){
+    html{overflow: auto;}
     body{
         padding-top: 60px;
+        overflow: hidden;
     }
 
     .mobile-navigation-banner{
@@ -272,7 +274,6 @@ a:-webkit-any-link{
     // Hamburger Menu
     .mobile-burger-menu{
         display: inline-block;
-        margin-top: -4px;
         margin-right: 20px;
 
         .line{
@@ -280,10 +281,11 @@ a:-webkit-any-link{
             height: 4px;
             background-color: black;
             display: block;
-            margin: 8px auto;
+            margin: 6px auto;
             -webkit-transition: all 0.3s ease-in-out;
             -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
+            border-radius: 3px;
         }
 
         &:hover{
@@ -302,10 +304,10 @@ a:-webkit-any-link{
         }
 
         &.is-active .line:nth-child(3){
-            -webkit-transform: translateY(-11px) rotate(-45deg);
-            -ms-transform: translateY(-11px) rotate(-45deg);
-            -o-transform: translateY(-11px) rotate(-45deg);
-            transform: translateY(-11px) rotate(-45deg);
+            -webkit-transform: translateY(-8px) rotate(-45deg);
+            -ms-transform: translateY(-8px) rotate(-45deg);
+            -o-transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         .darkmode & .line{

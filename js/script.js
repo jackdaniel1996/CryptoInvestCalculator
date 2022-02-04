@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //dark/lightmode
     var darkmode = localStorage.getItem('darkmode');
     if(darkmode == 1){
         $('body').addClass('darkmode');
@@ -15,5 +16,14 @@ $(document).ready(function(){
         $('body').removeClass('darkmode');
         localStorage.setItem('darkmode', 0);
     });
+
+    //mobile burger menu
+    $(document).ready(function(){
+        $(".mobile-burger-menu").click(function(){
+          $(this).toggleClass("is-active");
+          $('body').toggleClass("menu-active");
+        });
+      });
+
 });
 

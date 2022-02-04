@@ -260,6 +260,13 @@ a:-webkit-any-link{
     .landing-page-wrapper{
         width: calc(100% - 50px);
         margin-left: 25px;
+        left: 0;
+        transition: all $transitionStandard;   
+
+        .menu-active &{
+            left: 200px;
+            transition: all $transitionStandard;        
+        }
     }
 
     // Hamburger Menu

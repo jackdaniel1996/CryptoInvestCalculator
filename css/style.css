@@ -274,6 +274,14 @@ a:-webkit-any-link {
   .landing-page-wrapper {
     width: calc(100% - 50px);
     margin-left: 25px;
+    left: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-active .landing-page-wrapper {
+    left: 200px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   .mobile-burger-menu {
     display: inline-block;

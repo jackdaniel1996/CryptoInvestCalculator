@@ -130,6 +130,14 @@ body{
     border-radius: 3px;
 }
 
+.content-wrapper{
+    position: relative;
+    width: calc(100% - 325px);
+    overflow: hidden;
+    margin-left: 300px;
+    margin-top: 25px;
+}
+
 .landing-page-left-side{
     width: 50%;
     height: 100%;

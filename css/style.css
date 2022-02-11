@@ -1,4 +1,9 @@
 /* Variables*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   margin: 0;
   -webkit-transition: all 0.5s ease-in-out;
@@ -19,7 +24,8 @@ body.darkmode .navigation-wrapper {
 
 body.darkmode .navigation-item,
 body.darkmode .site-logo,
-body.darkmode .site-slogan {
+body.darkmode .site-slogan,
+body.darkmode .coin-value-display-block {
   color: white;
   -webkit-transition: color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
@@ -60,9 +66,7 @@ body.darkmode .darkmode-button.set-light {
 
 .site-logo > span:first-child {
   font-size: 30pt;
-  /*font-family: 'Source Serif Pro', serif;
-        font-family: 'Quicksand', sans-serif;*/
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 25pt;
@@ -92,8 +96,7 @@ body.darkmode .darkmode-button.set-light {
 }
 
 .navigation-item {
-  /*font-family: 'Open Sans', sans-serif;*/
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 16pt;
   font-weight: 400;
   color: #000;
@@ -192,7 +195,7 @@ body.darkmode .darkmode-button.set-light {
   color: #2b2b2b;
   font-size: 5.5vw;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
   z-index: 1;
   position: absolute;
@@ -245,6 +248,66 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
+.coin-value-display-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: auto;
+  width: 100%;
+  padding: 25px 0;
+}
+
+.coin-value-display-wrapper > :first-child {
+  margin-left: 0;
+}
+
+.coin-value-display-wrapper > :last-child {
+  margin-right: 0;
+}
+
+.coin-value-display-block {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 10px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.coin-value-display-name {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20pt;
+  line-height: 18pt;
+  font-weight: 800;
+}
+
+.coin-value-display-name span {
+  font-size: 13pt;
+  font-weight: 300;
+}
+
+.coin-value-display-value {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13pt;
+  font-weight: 400;
+}
+
+.coin-value-display-change {
+  font-family: "Open Sans", sans-serif;
+  font-size: 9pt;
+  font-weight: 300;
+}
+
+.mobile-navigation-banner {
+  display: none;
+}
+
 @media (max-width: 768px) {
   html {
     overflow: auto;
@@ -283,14 +346,16 @@ a:-webkit-any-link {
   .menu-active .navigation-wrapper {
     left: 0;
   }
-  .landing-page-wrapper {
+  .landing-page-wrapper,
+  .content-wrapper {
     width: calc(100% - 50px);
     margin-left: 25px;
     left: 0;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
-  .menu-active .landing-page-wrapper {
+  .menu-active .landing-page-wrapper, .menu-active
+  .content-wrapper {
     left: 200px;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;

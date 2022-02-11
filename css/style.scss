@@ -1,5 +1,5 @@
 @import 'variables';
-
+*{box-sizing: border-box;}
 body{
     margin: 0;
     transition: all $transitionStandard;
@@ -15,7 +15,8 @@ body{
 
         .navigation-item,
         .site-logo,
-        .site-slogan{
+        .site-slogan,
+        .coin-value-display-block{
             color: white;
             transition: color $transitionStandard;
         }
@@ -56,9 +57,7 @@ body{
 
     > span:first-child{
         font-size: 30pt;
-        /*font-family: 'Source Serif Pro', serif;
-        font-family: 'Quicksand', sans-serif;*/
-        font-family: 'Raleway', sans-serif;
+        font-family: $fontLogo;
         font-weight: 800;
         letter-spacing: 1px;
         line-height: 25pt;
@@ -83,8 +82,7 @@ body{
 }
 
 .navigation-item{
-    /*font-family: 'Open Sans', sans-serif;*/
-    font-family: 'Quicksand', sans-serif;
+    font-family: $fontMenu;
     font-size: 16pt;
     font-weight: 400;
     color: $fontColor;
@@ -175,7 +173,7 @@ body{
     //font-size: 70pt;
     font-size: 5.5vw;
     font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $fontText;
     text-align: left;
     z-index: 1;
     position: absolute;
@@ -227,7 +225,59 @@ a:-webkit-any-link{
     text-decoration: none;
 }
 
+//coin-value-display
+.coin-value-display-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    width: 100%;
+    padding: 25px 0;
 
+    > :first-child{
+        margin-left: 0;
+    }
+    > :last-child{
+        margin-right: 0;
+    }
+}
+
+.coin-value-display-block{
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 10px;    
+    white-space: nowrap;    
+    color: $fontColor;
+}
+
+.coin-value-display-name{
+    font-family: $fontText;
+    font-size: 20pt;
+    line-height: 18pt;
+    font-weight: 800;
+
+    span{
+        font-size: 13pt;
+        font-weight: 300;
+    }
+}
+
+.coin-value-display-value{
+    font-family: $fontText;
+    font-size: 13pt;
+    font-weight: 400;
+}
+
+.coin-value-display-change{
+    font-family: $fontText;
+    font-size: 9pt;
+    font-weight: 300;
+}
+
+//======
+
+.mobile-navigation-banner{display: none;}
 // mobile: 
 @media (max-width:768px){
     html{overflow: auto;}
@@ -267,7 +317,8 @@ a:-webkit-any-link{
             left: 0;
         }
     }
-    .landing-page-wrapper{
+    .landing-page-wrapper,
+    .content-wrapper{
         width: calc(100% - 50px);
         margin-left: 25px;
         left: 0;

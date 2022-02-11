@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="de" id="home">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Source+Serif+Pro:wght@200;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Raleway:wght@100;300;400;600;700&display=swap" rel="stylesheet">
-    <!--  Css  -->  
+    <!--  Css  -->
     <link rel="stylesheet" href="css/style.css">
     <title>Crypto Invest Calculator</title>
     <!--- Jquery/js -->
@@ -25,32 +26,34 @@
     <link rel="apple-touch-icon" sizes="144x144" href="imgs/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="imgs/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="imgs/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="imgs/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="imgs/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-  </head>
-  <body>
+</head>
+
+<body>
+
     <div class="mobile-navigation-banner">
         <div class="mobile-burger-menu">
             <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
         </div>
-        <div class="site-logo">            
+        <div class="site-logo">
             <span>CIC</span>
             <div class="site-slogan">Crypto <br>Invest <br> Calculator</div>
         </div>
     </div>
-   <div class="navigation-wrapper">
-       <div class="site-logo">
-           <span>CIC</span>
-           <div class="site-slogan">Crypto <br>Invest <br> Calculator</div>
-       </div>
-       <div class="navigation-item-wrapper">
+    <div class="navigation-wrapper">
+        <div class="site-logo">
+            <span>CIC</span>
+            <div class="site-slogan">Crypto <br>Invest <br> Calculator</div>
+        </div>
+        <div class="navigation-item-wrapper">
             <div class="navigation-item">
                 <a href="#home">Home</a>
             </div>
@@ -63,56 +66,45 @@
             <div class="navigation-item">
                 Anmelden
             </div>
-       </div>
-       <div class="darkmode-button-wrapper">
-           <div id="darkmodeBtn" class="darkmode-button set-dark"></div>
-           <div id="lightmodeBtn" class="darkmode-button set-light"></div>
-       </div>
-   </div>
-   <div class="landing-page-wrapper">
-       <div class="landingpage-banner-wrapper">
-            <div class="landing-page-left-side">
-                <img src="imgs/3dBitcoin.png"  class="background-3-b">           
-            </div>
-            <div class="landing-page-right-side">   
-                <div class="title-font">Crypto Invest Calculator</div>
-            </div>    
-            <div class="landing-page-gradient"></div>
-        </div>        
-    </div>
-    <div class="content-wrapper">            
-            <?php
-            // *** PUT YOUR API KEY HERE:
-            $myAPIKey = '9c9ea06b-27ba-458a-b0d8-32e5202faff5';
-            $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
-            $parameters = array ( 'symbol' => 'BTC,ETH,DOGE,SHIB' );
-            
-            $headers = array ( 
-            'Accepts: application/json', 
-            'X-CMC_PRO_API_KEY: ' . $myAPIKey 
-            );
-            // query string encode the parameters
-            $qs = http_build_query($parameters);
-            // create the request URL
-            $request = "{$url}?{$qs}";
-            // Get cURL resource
-            $curl = curl_init();
-            // Set cURL options
-            curl_setopt_array($curl, array(
-            CURLOPT_URL => $request,      // set the request URL
-            CURLOPT_HTTPHEADER => $headers, // set the headers 
-            CURLOPT_RETURNTRANSFER => 1     // ask for raw response instead of bool
-            ));
-            // Send the request, save the response
-            $response = curl_exec($curl);
-            // print json decoded response (here as an array)
-            echo '<pre>';
-            print_r(json_decode($response, true)); 
-            echo '</pre>';
-            // Close request
-            curl_close($curl);
-            ?>
         </div>
+        <div class="darkmode-button-wrapper">
+            <div id="darkmodeBtn" class="darkmode-button set-dark"></div>
+            <div id="lightmodeBtn" class="darkmode-button set-light"></div>
+        </div>
+    </div>
+    <!-- landingpage-banner -->
+    <div class="landing-page-wrapper">
+        <div class="landingpage-banner-wrapper">
+            <div class="landing-page-left-side">
+                <img src="imgs/3dBitcoin.png" class="background-3-b">
+            </div>
+            <div class="landing-page-right-side">
+                <div class="title-font">Crypto Invest Calculator</div>
+            </div>
+            <div class="landing-page-gradient"></div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="content-wrapper">
+        <div class="coin-value-display-wrapper">
+            <?php include 'script.php';
+            foreach ($myCoins_array as $coin) :
+                $coinName = $apiData['data'][$coin]['name'];
+                $coinNameShort = $apiData['data'][$coin]['symbol'];
+                $coinPrice = $apiData['data'][$coin]['quote']['EUR']['price'];
+                $coinChange = $apiData['data'][$coin]['quote']['EUR']['percent_change_24h'];
+                ?>
+                <div class="coin-value-display-block">
+                    <div class="coin-value-display-name"><?php echo $coinName ?> <span>(<?php echo $coinNameShort ?>)</span></div>
+                    <div class="coin-value-display-value"><?php echo number_format(round($coinPrice, 2), 2, ',', '.'); ?> €</div>
+                    <div class="coin-value-display-change">(<?php echo round($coinChange, 2); ?> %)</div>
+                </div>
+                <?php endforeach; ?>
+        </div>
+            
+
+    </div>
     <div style="height: 2000px;"></div> <!-- platzhalter zum scrollen -->
-  </body>
+</body>
+
 </html>

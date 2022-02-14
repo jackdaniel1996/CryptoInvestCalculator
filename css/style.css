@@ -22,13 +22,8 @@ body.darkmode .navigation-wrapper {
   transition: all 0.5s ease-in-out;
 }
 
-body.darkmode .navigation-item,
-body.darkmode .site-logo,
-body.darkmode .site-slogan,
-body.darkmode .coin-value-display-block {
+body.darkmode .font-color {
   color: white;
-  -webkit-transition: color 0.5s ease-in-out;
-  transition: color 0.5s ease-in-out;
 }
 
 body.darkmode .darkmode-button.set-dark {
@@ -37,6 +32,10 @@ body.darkmode .darkmode-button.set-dark {
 
 body.darkmode .darkmode-button.set-light {
   display: block;
+}
+
+.font-color {
+  color: #000;
 }
 
 .navigation-wrapper {
@@ -50,14 +49,12 @@ body.darkmode .darkmode-button.set-light {
   top: 0;
   left: 0;
   background-color: white;
-  color: #000;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .site-logo {
   display: inline-block;
-  color: #000;
 }
 
 .site-logo:hover {
@@ -99,7 +96,6 @@ body.darkmode .darkmode-button.set-light {
   font-family: "Quicksand", sans-serif;
   font-size: 16pt;
   font-weight: 400;
-  color: #000;
   display: inline-block;
   padding: 8px 0;
   cursor: pointer;
@@ -129,7 +125,6 @@ body.darkmode .darkmode-button.set-light {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   display: inline-block;
-  color: #000;
   -webkit-transition: color 0.5s ease-in-out;
   transition: color 0.5s ease-in-out;
 }
@@ -147,6 +142,7 @@ body.darkmode .darkmode-button.set-light {
 }
 
 .content-wrapper {
+  font-family: "Open Sans", sans-serif;
   position: relative;
   width: calc(100% - 325px);
   overflow: hidden;
@@ -248,6 +244,12 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
+.content-headline-big {
+  font-family: "Open Sans", sans-serif;
+  font-size: 4vw;
+  font-weight: 700;
+}
+
 .coin-value-display-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,7 +279,6 @@ a:-webkit-any-link {
   padding: 10px 15px;
   margin: 0 10px;
   white-space: nowrap;
-  color: #000;
 }
 
 .coin-value-display-name {

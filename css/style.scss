@@ -13,12 +13,8 @@ body{
             transition: all $transitionStandard;
         }
 
-        .navigation-item,
-        .site-logo,
-        .site-slogan,
-        .coin-value-display-block{
+        .font-color{
             color: white;
-            transition: color $transitionStandard;
         }
 
         .darkmode-button{
@@ -33,6 +29,10 @@ body{
     }
 }
 
+.font-color{
+    color: $fontColor;
+}
+
 .navigation-wrapper{    
     height: 100%;
     padding: 25px;
@@ -43,13 +43,11 @@ body{
     top: 0;
     left: 0;
     background-color: $lightModeColor;
-    color: $fontColor;
     transition: all $transitionStandard;
 }
 
 .site-logo {
     display: inline-block;
-    color: $fontColor;
 
     &:hover{
         cursor: pointer;
@@ -85,7 +83,6 @@ body{
     font-family: $fontMenu;
     font-size: 16pt;
     font-weight: 400;
-    color: $fontColor;
     display: inline-block;
     padding: 8px 0;
     cursor: pointer;
@@ -113,7 +110,6 @@ body{
     font-family: $fontText;
     font-weight: 700;
     display: inline-block;
-    color: $fontColor;
     transition: color $transitionStandard;
 }
 
@@ -128,7 +124,8 @@ body{
     border-radius: 3px;
 }
 
-.content-wrapper{
+.content-wrapper{    
+    font-family: $fontText;
     position: relative;
     width: calc(100% - 325px);
     overflow: hidden;
@@ -225,6 +222,12 @@ a:-webkit-any-link{
     text-decoration: none;
 }
 
+.content-headline-big{
+    font-family: $fontText;    
+    font-size: 4vw;
+    font-weight: 700;
+}
+
 //coin-value-display
 .coin-value-display-wrapper{
     display: flex;
@@ -247,8 +250,7 @@ a:-webkit-any-link{
     border-radius: 3px;
     padding: 10px 15px;
     margin: 0 10px;    
-    white-space: nowrap;    
-    color: $fontColor;
+    white-space: nowrap;   
 }
 
 .coin-value-display-name{
@@ -276,7 +278,6 @@ a:-webkit-any-link{
 }
 
 //======
-
 .mobile-navigation-banner{display: none;}
 // mobile: 
 @media (max-width:768px){

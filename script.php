@@ -46,7 +46,7 @@
         $coinPrice = $apiData['data'][$coin]['quote']['EUR']['price'];
         $coinChange = $apiData['data'][$coin]['quote']['EUR']['percent_change_24h'];
         ?>
-        <div class="coin-value-display-block">
+        <div class="coin-value-display-block font-color">
             <div class="coin-value-display-name"><?php echo $coinName ?> <span>(<?php echo $coinNameShort ?>)</span></div>
             <div class="coin-value-display-value"><?php echo number_format(round($coinPrice, 2), 2, ',', '.'); ?> €</div>
             <div class="coin-value-display-change">(<?php echo round($coinChange, 2); ?> %)</div>

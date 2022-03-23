@@ -17,13 +17,10 @@ $(document).ready(function(){
         localStorage.setItem('darkmode', 0);
     });
 
-    //mobile burger menu
-    $(document).ready(function(){
-        $(".mobile-burger-menu").click(function(){
-          $(this).toggleClass("is-active");
-          $('body').toggleClass("menu-active");
-        });
-      });
-
+    //mobile burger menu   
+    $(".mobile-burger-menu").click(function(){
+        $(this).toggleClass("is-active");
+        $('body').toggleClass("menu-active");
+    });
 });
 

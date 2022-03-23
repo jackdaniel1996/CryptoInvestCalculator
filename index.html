@@ -93,16 +93,37 @@
         <div id="calculator" class="content-headline-big">Calculator</div>
         <div class="calculator-wrapper">
             <div>                
-                <input type="number" id="investValue" onkeyup="calculate()"><span>Investitionsbetrag</span>
+                <input type="number" id="investValue" onkeyup="calculate(calculation)" placeholder="0">
+                <span> Investitionsbetrag</span>
             </div>
             <div>
-                <input type="number" id="marketValue" onkeyup="calculate()"><span>Aktueller Kurs</span>
+                <input type="number" id="marketValueBuy" onkeyup="calculate(calculation)" placeholder="0">
+                <span> Aktueller Kurs</span>
             </div>
             <div>
-                <span>Menge beim Kauf:</span>
-                <div id="coinAmount">0.00000000</div>
+                <input type="number" id="marketValueSell" onkeyup="calculate(calculation)" placeholder="0">
+                <span> Kurs beim Verkauf</span>
             </div>
-            <button id="calculate" onclick="calculate()">Berechnen</button>    
+            <div>
+                <span>Menge beim Kauf = </span>
+                <span id="coinAmount">0.00000000</span>
+            </div>
+            <div>
+                <span>Preissteigerung/verlust: </span>
+                <div>                    
+                </div>
+                    <span id="valueChangeCurrency">0</span> €
+                </div>
+                <div>
+                    <span id="valueChangePercent">0</span> %
+                </div>                
+            </div>    
+            <div>
+                <span>Umsatz: </span>
+                <span id="revenue">0</span>
+                <span> €</span>                
+            </div>
+            <button id="calculate" onclick="console.log(calculation);">Debug</button>    
         </div>
     </div>
     <div style="height: 2000px;"></div> <!-- platzhalter zum scrollen -->

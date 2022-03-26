@@ -11,12 +11,16 @@ body.darkmode {
   background-color: #212121;
   transition: all 0.5s ease-in-out;
 }
-body.darkmode .navigation-wrapper {
+body.darkmode .navigation-wrapper,
+body.darkmode .results-background .spacer {
   background-color: #212121;
   transition: all 0.5s ease-in-out;
 }
-body.darkmode .font-color {
+body.darkmode .font-color,
+body.darkmode .font-color a:-webkit-any-link {
   color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 body.darkmode .darkmode-button.set-dark {
   display: none;
@@ -24,9 +28,22 @@ body.darkmode .darkmode-button.set-dark {
 body.darkmode .darkmode-button.set-light {
   display: block;
 }
+body.darkmode .calculator-inputs input {
+  background-color: #313131;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+body.darkmode .results-background {
+  background-color: #313131;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
 
-.font-color {
+.font-color,
+.font-color a:-webkit-any-link {
   color: #000;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .navigation-wrapper {
@@ -75,14 +92,14 @@ body.darkmode .darkmode-button.set-light {
 
 .navigation-item {
   font-family: "Quicksand", sans-serif;
-  font-size: 16pt;
+  font-size: 18pt;
   font-weight: 400;
   display: inline-block;
   padding: 8px 0;
   cursor: pointer;
   transition: color 0.5s ease-in-out;
   border-top: 1px solid #dddddd;
-  width: 110px;
+  width: 125px;
 }
 .navigation-item:first-child {
   border-top: none;
@@ -204,7 +221,6 @@ img.background-3-b {
 }
 
 a:-webkit-any-link {
-  color: inherit;
   cursor: pointer;
   text-decoration: none;
 }
@@ -213,6 +229,7 @@ a:-webkit-any-link {
   font-family: "Open Sans", sans-serif;
   font-size: 4vw;
   font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .coin-value-display-wrapper {
@@ -361,4 +378,7 @@ a:-webkit-any-link {
     left: 10px;
     font-size: 10.5vw;
   }
+}
+.bold {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */

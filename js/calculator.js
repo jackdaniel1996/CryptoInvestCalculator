@@ -17,7 +17,7 @@ let calculation ={
     },
     cValueChangePer(){
         if(this.marketValueBuy > this.marketValueSell){ //decrease
-            this.valueChange.percent = ((this.marketValueBuy - this.marketValueSell) / this.marketValueBuy * 100).toFixed(2);
+            this.valueChange.percent = "-" + ((this.marketValueBuy - this.marketValueSell) / this.marketValueBuy * 100).toFixed(2);
         }else{ //increase
             this.valueChange.percent = ((this.marketValueSell - this.marketValueBuy) / this.marketValueBuy * 100).toFixed(2);
         }        
@@ -25,7 +25,7 @@ let calculation ={
     },
     revenue: 0,
     cRevenue(){
-        this.revenue = ((this.coinAmount * this.marketValueSell) - this.investValue).toFixed(2);
+        this.revenue = ((this.coinAmount * this.marketValueSell) - this.investValue).toFixed(2) + " €";
         return this.revenue
     }   
 };
@@ -47,10 +47,10 @@ function calculate(c){
     // revenue
     // wenn inputs Menge und Marktwert bei Verkauf leer sind
     if(c.coinAmount.length == 0 || c.marketValueSell.length == 0 || c.investValue.length == 0 || c.marketValueBuy.length == 0){
-        $('#revenue').html('0');
+        $('#revenue').html('0 €');
     }else{        
         $('#valueChangeCurrency').html(c.cValueChangeCur());
-        $('#valueChangeCurrency').html(c.cValueChangePer());
+        $('#valueChangePercent').html(c.cValueChangePer());
         $('#revenue').html(c.cRevenue());
     }
 }

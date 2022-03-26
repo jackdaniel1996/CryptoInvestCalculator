@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Raleway:wght@100;300;400;600;700&display=swap" rel="stylesheet">
     <!--  Css  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calculator.css">
     <title>Crypto Invest Calculator</title>
     <!--- Jquery/js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -54,20 +55,20 @@
             <span>CIC</span>
             <div class="site-slogan font-color">Crypto <br>Invest <br> Calculator</div>
         </div>
-        <div class="navigation-item-wrapper font-color">
-            <div class="navigation-item">
+        <div class="navigation-item-wrapper">
+            <div class="navigation-item font-color">
                 <a href="#home">Home</a>
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item font-color">
                 Info
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item font-color">
                 <a href="#calculator">Calculator</a>
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item font-color">
                 Impressum
             </div>
-            <div class="navigation-item">
+            <div class="navigation-item font-color">
                 Anmelden
             </div>
         </div>
@@ -92,38 +93,40 @@
     <div class="content-wrapper font-color" style="margin-top: 40px;">
         <div id="calculator" class="content-headline-big">Calculator</div>
         <div class="calculator-wrapper">
-            <div>                
-                <input type="number" id="investValue" onkeyup="calculate(calculation)" placeholder="0">
-                <span> Investitionsbetrag</span>
-            </div>
-            <div>
-                <input type="number" id="marketValueBuy" onkeyup="calculate(calculation)" placeholder="0">
-                <span> Aktueller Kurs</span>
-            </div>
-            <div>
-                <input type="number" id="marketValueSell" onkeyup="calculate(calculation)" placeholder="0">
-                <span> Kurs beim Verkauf</span>
-            </div>
-            <div>
-                <span>Menge beim Kauf = </span>
-                <span id="coinAmount">0.00000000</span>
-            </div>
-            <div>
-                <span>Preissteigerung/verlust: </span>
-                <div>                    
-                </div>
-                    <span id="valueChangeCurrency">0</span> €
+            <div class="calculator-inputs">
+                <div>
+                    <div>Investitionsbetrag</div>                
+                    <input tabindex="1" type="number" id="investValue" onkeyup="calculate(calculation)" placeholder="0">                    
                 </div>
                 <div>
-                    <span id="valueChangePercent">0</span> %
-                </div>                
-            </div>    
-            <div>
-                <span>Umsatz: </span>
-                <span id="revenue">0</span>
-                <span> €</span>                
+                    <div>Aktueller Kurs</div>
+                    <input tabindex="1" type="number" id="marketValueBuy" onkeyup="calculate(calculation)" placeholder="0">
+                </div>
+                <div>
+                    <div>Kurs beim Verkauf</div>
+                    <input tabindex="1" type="number" id="marketValueSell" onkeyup="calculate(calculation)" placeholder="0">
+                </div>
             </div>
-            <button id="calculate" onclick="console.log(calculation);">Debug</button>    
+            <div class="calculator-results">
+                <div class="results-background">
+                    <div>
+                        <div>Menge beim Kauf</div>
+                        <div class="bold" id="coinAmount">0.00000000</div>
+                    </div>
+                    <div>
+                        <span>Preissteigerung/verlust: </span>
+                        <div class="bold">
+                            <span id="valueChangeCurrency">0</span> € / <span id="valueChangePercent">0</span> %
+                        </div>
+                    </div>  
+                    <div class="spacer"></div>  
+                    <div>
+                        <div>Umsatz: </div>
+                        <div class="bold" id="revenue">0 <span> €</span></div>               
+                    </div> 
+                </div>
+            </div>            
+            <!-- <button id="calculate" onclick="console.log(calculation);">Debug</button>     -->
         </div>
     </div>
     <div style="height: 2000px;"></div> <!-- platzhalter zum scrollen -->

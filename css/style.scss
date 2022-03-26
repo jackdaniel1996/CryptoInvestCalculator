@@ -1,4 +1,5 @@
 @import 'variables';
+
 *{box-sizing: border-box;}
 body{
     margin: 0;
@@ -8,13 +9,16 @@ body{
         background-color: $darkModeColor;
         transition: all $transitionStandard;
 
-        .navigation-wrapper{
+        .navigation-wrapper,
+        .results-background .spacer{
             background-color: $darkModeColor;
             transition: all $transitionStandard;
         }
 
-        .font-color{
+        .font-color,
+        .font-color a:-webkit-any-link{
             color: white;
+            transition: all $transitionStandard;
         }
 
         .darkmode-button{
@@ -26,11 +30,27 @@ body{
                 display: block;
             }
         }
+
+        .calculator-inputs{
+            input{
+                background-color: $inputBGdark;
+                color: white;
+                transition: all $transitionStandard;
+            }
+        }
+
+        .results-background{
+            background-color: $inputBGdark;
+            color: white;
+            transition: all $transitionStandard;
+        }
     }
 }
 
-.font-color{
+.font-color,
+.font-color a:-webkit-any-link{
     color: $fontColor;
+    transition: all $transitionStandard;
 }
 
 .navigation-wrapper{    
@@ -81,14 +101,14 @@ body{
 
 .navigation-item{
     font-family: $fontMenu;
-    font-size: 16pt;
+    font-size: 18pt;
     font-weight: 400;
     display: inline-block;
     padding: 8px 0;
     cursor: pointer;
     transition: color $transitionStandard;
     border-top: 1px solid #dddddd;
-    width: 110px;
+    width: 125px;
 
     &:first-child{
         border-top: none;
@@ -217,7 +237,6 @@ img.background-3-b {
 }
 
 a:-webkit-any-link{
-    color: inherit;
     cursor: pointer;
     text-decoration: none;
 }
@@ -226,6 +245,7 @@ a:-webkit-any-link{
     font-family: $fontText;    
     font-size: 4vw;
     font-weight: 700;
+    margin-bottom: 40px;
 }
 
 //coin-value-display
@@ -390,4 +410,8 @@ a:-webkit-any-link{
         left: 10px;
         font-size: 10.5vw;
     }
+}
+
+.bold{
+    font-weight: 700;
 }
